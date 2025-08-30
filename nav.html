@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Navigation Bar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    .navbar {
+      background: #333;
+      overflow: hidden;
+    }
+    .navbar a {
+      float: left;
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    .navbar a:hover {
+      background: #575757;
+    }
+    .active {
+      background: #04AA6D;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="#" class="active">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <script>
+    // Highlight active link
+    const links = document.querySelectorAll(".navbar a");
+    links.forEach(link => {
+      link.addEventListener("click", function() {
+        links.forEach(l => l.classList.remove("active"));
+        this.classList.add("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
